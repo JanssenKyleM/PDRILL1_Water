@@ -23,8 +23,8 @@ exports.createUser=(req,res)=>{
 
 //UPDATE
 exports.updateUser=(req,res)=>{
-    const {meter,consumer,cubic,amount,status}=req.body;
-    connection.query('UPDATE water_bills SET consumer_name=?,cubic_meters_used=?,total_amount=?,status=? WHERE meter_number=? ',[meter,consumer,cubic,amount,status],(err,result)=>{
+    const {consumer,cubic,amount,status,meter}=req.body;
+    connection.query('UPDATE water_bills SET consumer_name=?,cubic_meters_used=?,total_amount=?,status=? WHERE meter_number=? ',[consumer,cubic,amount,status,meter],(err,result)=>{
         if(err) throw err;
         if(result.affectedRows>0)
             res.json({message:'User updated successfully'});
