@@ -6,7 +6,7 @@ const userController = require('../controllers/userController');
 
 //endpoint to handle employees data retrieval
 router.get('/users', userController.getAllUsers);
-router.post('/users',userController.createUser);
-router.put('/users',userController.updateUser);
+router.post('/water-bills',userController.createUser);
+router.put('/water-bills',userController.updateUser);
 
 module.exports = router;
